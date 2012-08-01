@@ -4,7 +4,7 @@ Our [CommandFusion hardware](http://www.commandfusion.com/hardware.html) is powe
 
 Our JavaScript code handles the [low-level CFLink protocol](http://www.commandfusion.com/docs/cflink), providing you with high-level interfaces for your code to drive the CFLink network.
 
-** CFLink JavaScript API is still in beta!** Please report issues and feature requests via the [issue tracker](https://github.com/CommandFusion/CFLinkJS/issues).
+**CFLink JavaScript API is still in beta!** Please report issues and feature requests via the [issue tracker](https://github.com/CommandFusion/CFLinkJS/issues).
 
 ## Usage
 
