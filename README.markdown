@@ -12,7 +12,12 @@ You can view the CFLink JavaScript API documentation [online](http://www.command
 
 ## Usage
 
-To use the CFLink JS API, you need to include the [cflink.js](https://raw.github.com/CommandFusion/CFLinkJS/master/cflink.js) file into your guiDesigner project via Edit > Project Properties > Script Manager.
+There are two builds of the API available:
+
+1. **[cflink.min.js](https://raw.github.com/CommandFusion/CFLinkJS/master/cflink.min.js)** - This is is the minified build of the API, which uses less resources and is recommended for final testing and deployment.
+1. **[cflink.js](https://raw.github.com/CommandFusion/CFLinkJS/master/cflink.js)** - This build should be used for testing purposes. Before reporting any bugs, please try using this build so that any error messages printed out in the [JavaScript debugger](http://www.commandfusion.com/docs/scripting/debug.html) are easier for us to trace.
+
+To use the CFLink JS API, you need to include the CFLink JavaScript (.js) file into your guiDesigner project via Edit > Project Properties > Script Manager.
 
 Then you create your own JavaScript file for your iViewer programming, and add it to the Script Manager also.
 
