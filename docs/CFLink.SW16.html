@@ -1,0 +1,2665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Class: SW16</title>
+    
+    <script src="http://shjs.sourceforge.net/sh_main.min.js"> </script>
+    <script src="http://shjs.sourceforge.net/lang/sh_javascript.min.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="styles/node-dark.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+    
+<!-- this element gets replaced when producing the final complete docset
+     with a navigation bar that allows moving between docs
+-->
+<navbar />
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span2">
+            <div class="well">
+                <div id="toc">
+                    <h2><a href="index.html">Table of Contents</a></h2><h3>Namespaces</h3><ul><li><a href="CFLink.html">CFLink</a></li></ul><h3>Classes</h3><ul><li><a href="CFLink.CFMini.html">CFMini</a></li><li><a href="CFLink.DINMOD4.html">DINMOD4</a></li><li><a href="CFLink.Device.html">Device</a></li><li><a href="CFLink.IOPort.html">IOPort</a></li><li><a href="CFLink.IRBlaster.html">IRBlaster</a></li><li><a href="CFLink.LANBridge.html">LANBridge</a></li><li><a href="CFLink.LEDPort.html">LEDPort</a></li><li><a href="CFLink.Module.html">Module</a></li><li><a href="CFLink.RS232Port.html">RS232Port</a></li><li><a href="CFLink.RelayPort.html">RelayPort</a></li><li><a href="CFLink.SW16.html">SW16</a></li><li><a href="CFLink.LANBridge.Slot.html">Slot</a></li></ul>
+                </div>
+            </div>
+        </div>
+        <div class="span10">
+            
+
+
+
+<div id="header">
+    <h2><span class="ancestors"><a href="CFLink.html">CFLink</a>.</span>SW16</h2>
+    
+</div>  
+
+<div id="article">
+    <div class="container-overview">
+    
+
+    
+        
+
+    <div class="method-container">
+        <dt>
+            <h4 class="method-name" id="SW16"><span class="type-signature"></span>new SW16</h4>
+    
+            
+            <p class="method-summary">Interface to a SW16 device</p>
+            
+        </dt>
+        <dd>
+
+    
+        
+    
+        
+            <h5>Parameters:</h5>
+            
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>systemName</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>dataString</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        
+    
+        
+            <div class="description">
+                The CFLink.SW16 object lets you interact with an SW16 device on your CFLink bus
+            </div>
+        
+
+        
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+        
+    
+        
+    
+        
+    
+        
+
+    </dd>
+</div>
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="subsection-title">Members</div>
+
+        <dl>
+            
+<dt>
+    <h4 class="name" id="DRY_CONTACT_CHANGE"><span class="type-signature">&lt;static> </span>DRY_CONTACT_CHANGE<span class="type-signature"> :String</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Event fired when a dry contact changes state
+Your callback function for watching this event should be of the type:
+function(event, sender, dryContactNumber, state)
+the dryContactNumber is the number of the dry contact, 1-16
+the state is 1 or 0
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+    
+</dd>
+
+        </dl>
+    
+
+    
+        <div class="subsection-title">Methods</div>
+
+        <dl>
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="blinkBacklightLED">
+            <span class="type-signature"></span>blinkBacklightLED
+            (<span class="method-call-params">
+                
+    	                    index
+    	                    , 
+    	                    minLevel
+    	                    , 
+    	                    maxLevel
+    	                    , 
+    	                    timeMax
+    	                    , 
+    	                    timeMin
+    	                    , 
+    	                    count
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">a single backlight led number (1-4) or an array of backlight led numbers (i.e. [1,3])</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>minLevel</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">minimum level (0-100)</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>maxLevel</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">maximum level (0-100)</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>timeMax</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">time to stay at max level, in 0.1s increments</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>timeMin</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">time to stay at min level, in 0.1s increments</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>count</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">number of times to switch from min level to max level and back. Pass 0 for unlimited</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Blink one or more LEDs, switching instantly between the minimum and maximum levels and remaining at each level the specified time
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="blinkLED">
+            <span class="type-signature"></span>blinkLED
+            (<span class="method-call-params">
+                
+    	                    index
+    	                    , 
+    	                    minLevel
+    	                    , 
+    	                    maxLevel
+    	                    , 
+    	                    timeMax
+    	                    , 
+    	                    timeMin
+    	                    , 
+    	                    count
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">a single led number (1-16) or an array of led numbers (i.e. [1,3,5,9])</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>minLevel</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">minimum level (0-100)</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>maxLevel</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">maximum level (0-100)</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>timeMax</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">time to stay at max level, in 0.1s increments</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>timeMin</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">time to stay at min level, in 0.1s increments</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>count</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">number of times to switch from min level to max level and back. Pass 0 for unlimited</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Blink one or more LEDs, switching instantly between the minimum and maximum levels  and remaining at each level the specified time
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="dimBacklightLED">
+            <span class="type-signature"></span>dimBacklightLED
+            (<span class="method-call-params">
+                
+    	                    index
+    	                    , 
+    	                    minLevel
+    	                    , 
+    	                    maxLevel
+    	                    , 
+    	                    timeToMax
+    	                    , 
+    	                    timeToMin
+    	                    , 
+    	                    count
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">a single backlight led number (1-4) or an array of backlight led numbers (i.e. [1,3])</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>minLevel</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">minimum level (0-100)</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>maxLevel</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">maximum level (0-100)</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>timeToMax</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">time to reach max level, in 0.1s increments</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>timeToMin</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">time to reach min level, in 0.1s increments</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>count</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">number of times to dim from min level to max level and back. Pass 0 for unlimited</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Dim one or more backlight LEDs, fading between the minimum and maximum levels
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="dimLED">
+            <span class="type-signature"></span>dimLED
+            (<span class="method-call-params">
+                
+    	                    index
+    	                    , 
+    	                    minLevel
+    	                    , 
+    	                    maxLevel
+    	                    , 
+    	                    timeToMax
+    	                    , 
+    	                    timeToMin
+    	                    , 
+    	                    count
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">a single led number (1-16) or an array of led numbers (i.e. [1,3,5,9])</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>minLevel</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">minimum level (0-100)</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>maxLevel</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">maximum level (0-100)</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>timeToMax</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">time to reach max level, in 0.1s increments</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>timeToMin</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">time to reach min level, in 0.1s increments</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>count</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">number of times to dim from min level to max level and back. Pass 0 for unlimited</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Dim one or more LEDs, fading between the minimum and maximum levels
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="getBacklightLED">
+            <span class="type-signature"></span>getBacklightLED
+            (<span class="method-call-params">
+                
+    	                    number
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>number</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">the backlight LED to get (1-4)</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+                            <dl>
+
+        <dt>
+            Returns
+        <dt>
+        <dd>
+            a LED object
+        </dd>
+    
+    	    <dt>
+	        
+	            Type
+            
+        	</dt>
+        	<dd>
+        		
+        		<span class="param-type">CFLink.LEDPort</span> 
+        		
+        	</dd>
+
+</dl>
+
+                        
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Obtain the backlight <a href="CFLink.LEDPort.html">CFLink.LEDPort</a> object at specified position. You can obtain the current
+state and level from the returned object.
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="getDryContactState">
+            <span class="type-signature"></span>getDryContactState
+            (<span class="method-call-params">
+                
+    	                    number
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>number</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">the dry contact number (1-16)</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+                            <dl>
+
+        <dt>
+            Returns
+        <dt>
+        <dd>
+            1 if closed (pushed), 0 if open (released), -1 if not known yet
+        </dd>
+    
+</dl>
+
+                        
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Get the current state of a dry contact of this SW16
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="getDryContactStates">
+            <span class="type-signature"></span>getDryContactStates
+            (<span class="method-call-params">
+                
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Obtain the full state list of dry contacts. Returns an array of numbers.
+First element represents dry contact #1, last element (index 15) represents dry contact #16.
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="getLED">
+            <span class="type-signature"></span>getLED
+            (<span class="method-call-params">
+                
+    	                    number
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>number</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">the LED to get (1-16)</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+                            <dl>
+
+        <dt>
+            Returns
+        <dt>
+        <dd>
+            a LED object
+        </dd>
+    
+    	    <dt>
+	        
+	            Type
+            
+        	</dt>
+        	<dd>
+        		
+        		<span class="param-type">CFLink.LEDPort</span> 
+        		
+        	</dd>
+
+</dl>
+
+                        
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Obtain the <a href="CFLink.LEDPort.html">CFLink.LEDPort</a> object at specified position. You can obtain the current
+state and level from the returned object.
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="pulseBacklightLED">
+            <span class="type-signature"></span>pulseBacklightLED
+            (<span class="method-call-params">
+                
+    	                    index
+    	                    , 
+    	                    time
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">a single backlight led number (1-4) or an array of backlight led numbers (i.e. [1,3])</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>time</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">the time to pulse the LED on for, in a resolution of 0.1 seconds. Min 0 seconds (0), Max 999.9 seconds (9999)</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Pulse one or more backlight LEDs
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="pulseLED">
+            <span class="type-signature"></span>pulseLED
+            (<span class="method-call-params">
+                
+    	                    index
+    	                    , 
+    	                    time
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">a single led number (1-16) or an array of led numbers (i.e. [1,3,5,9])</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>time</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">the time to pulse the LED on for, in a resolution of 0.1 seconds. Min 0 seconds (0), Max 999.9 seconds (9999)</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Pulse one or more LEDs
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="rampBacklightLED">
+            <span class="type-signature"></span>rampBacklightLED
+            (<span class="method-call-params">
+                
+    	                    index
+    	                    , 
+    	                    level
+    	                    , 
+    	                    time
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">a single backlight led number (1-4) or an array of backlight led numbers (i.e. [1,3])</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>level</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">the level to which to ramp the aforementioned LEDs</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>time</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">the ramp duration in 0.1s increments</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Ramp one or more LEDs
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="rampLED">
+            <span class="type-signature"></span>rampLED
+            (<span class="method-call-params">
+                
+    	                    index
+    	                    , 
+    	                    level
+    	                    , 
+    	                    time
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">a single led number (1-16) or an array of led numbers (i.e. [1,3,5,9])</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>level</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">the level to which to ramp the aforementioned LEDs</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>time</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">the ramp duration in 0.1s increments</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Ramp one or more LEDs
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="readStatus">
+            <span class="type-signature"></span>readStatus
+            (<span class="method-call-params">
+                
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Ask the device to report its complete status (dry contacts states, LEDs & backlight LEDs current values)
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="setBacklightLED">
+            <span class="type-signature"></span>setBacklightLED
+            (<span class="method-call-params">
+                
+    	                    index
+    	                    , 
+    	                    on
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">a single backlight led number (1-4) or an array of backlight led numbers (i.e. [1,3])</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>on</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">true to turn on, false to turn offevel of the LED, 0-100</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Sets the state of one or more backlight LEDs
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="setLED">
+            <span class="type-signature"></span>setLED
+            (<span class="method-call-params">
+                
+    	                    index
+    	                    , 
+    	                    on
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">a single led number (1-16) or an array of led numbers (i.e. [1,3,5,9])</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>on</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">true to turn on, false to turn offevel of the LED, 0-100 (can also pass 1 / 0)</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Sets the state of one or more LEDs
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="toggleBacklightLED">
+            <span class="type-signature"></span>toggleBacklightLED
+            (<span class="method-call-params">
+                
+    	                    index
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">a single backlight led number (1-4) or an array of backlight led numbers (i.e. [1,3])</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Toggle the state of one or more backlight LEDs
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="toggleLED">
+            <span class="type-signature"></span>toggleLED
+            (<span class="method-call-params">
+                
+    	                    index
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">a single led number (1-16) or an array of led numbers (i.e. [1,3,5,9])</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Toggle the state of one or more LEDs
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="unwatchContacts">
+            <span class="type-signature"></span>unwatchContacts
+            (<span class="method-call-params">
+                
+    	                    watcherID
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		<th>Type</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>watcherID</code></td>
+            
+            
+            <td class="type">
+            
+                        number
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">the watcher ID that was returned by CFLink.SW16.watchContacts</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Stop watching the contact changes you asked to be notified for in CFLink.SW16.watchContacts. You could
+as well call <a href="CFLink.html#unwatch">CFLink.unwatch</a> which does the same thing.
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="watchContacts">
+            <span class="type-signature"></span>watchContacts
+            (<span class="method-call-params">
+                
+    	                    contacts
+    	                    , 
+    	                    callback
+    	                    , 
+    	                    me
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		<th>Type</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>contacts</code></td>
+            
+            
+            <td class="type">
+            
+                        Array
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">an array of the contact numbers to watch. Pass `null' to watch all dry contacts</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+            
+            <td class="type">
+            
+                        Function
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">your callback function, of the form callback(sw16_object, contactNumber, contactState)</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>me</code></td>
+            
+            
+            <td class="type">
+            
+                        Object
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">the object to set as `this' when calling your callback function</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+                            <dl>
+
+        <dt>
+            Returns
+        <dt>
+        <dd>
+            a watcherID you can use to unwatch with CFLink.SW16.unwatchContacts
+        </dd>
+    
+    	    <dt>
+	        
+	            Type
+            
+        	</dt>
+        	<dd>
+        		
+        		<span class="param-type">number</span> 
+        		
+        	</dd>
+
+</dl>
+
+                        
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Setup a callback function that is called when the state of selected contacts changes
+This is a simple helper that watches the <a href="CFLink.SW16.html#DRY_CONTACT_CHANGE">CFLink.SW16.DRY_CONTACT_CHANGE</a> event and only calls you back
+when one of the dry contacts you want to watch changes state. Note that when a contact is being pressed then
+released, you will be called twice (once for Press, once for Release)
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        </dl>
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<br clear="both">
+
+<script> sh_highlightDocument(); </script>
+</body>
+</html>

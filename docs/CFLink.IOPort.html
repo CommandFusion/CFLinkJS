@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Class: IOPort</title>
+    
+    <script src="http://shjs.sourceforge.net/sh_main.min.js"> </script>
+    <script src="http://shjs.sourceforge.net/lang/sh_javascript.min.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="styles/node-dark.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+    
+<!-- this element gets replaced when producing the final complete docset
+     with a navigation bar that allows moving between docs
+-->
+<navbar />
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span2">
+            <div class="well">
+                <div id="toc">
+                    <h2><a href="index.html">Table of Contents</a></h2><h3>Namespaces</h3><ul><li><a href="CFLink.html">CFLink</a></li></ul><h3>Classes</h3><ul><li><a href="CFLink.CFMini.html">CFMini</a></li><li><a href="CFLink.DINMOD4.html">DINMOD4</a></li><li><a href="CFLink.Device.html">Device</a></li><li><a href="CFLink.IOPort.html">IOPort</a></li><li><a href="CFLink.IRBlaster.html">IRBlaster</a></li><li><a href="CFLink.LANBridge.html">LANBridge</a></li><li><a href="CFLink.LEDPort.html">LEDPort</a></li><li><a href="CFLink.Module.html">Module</a></li><li><a href="CFLink.RS232Port.html">RS232Port</a></li><li><a href="CFLink.RelayPort.html">RelayPort</a></li><li><a href="CFLink.SW16.html">SW16</a></li><li><a href="CFLink.LANBridge.Slot.html">Slot</a></li></ul>
+                </div>
+            </div>
+        </div>
+        <div class="span10">
+            
+
+
+
+<div id="header">
+    <h2><span class="ancestors"><a href="CFLink.html">CFLink</a>.</span>IOPort</h2>
+    
+</div>  
+
+<div id="article">
+    <div class="container-overview">
+    
+
+    
+        
+
+    
+        
+    
+        
+    
+        
+            <div class="description">
+                An IOPort object represents a single IO port on a CF device or module.
+Since ports can be configured to perform several functions, you can obtain
+the current port mode by reading the CFLink.IOPort.mode property, which is one of the
+values in <a href="CFLink.IOPort.html#Mode">CFLink.IOPort.Mode</a>.
+
+<br><br>
+This class is a low-level object that you shouldn't need to use directly. Use the convenience methods
+in the device classes instead.
+<br>
+Instances of this object are being created for you by the device class that
+holds the port (i.e. <a href="CFLink.CFMini.html">CFLink.CFMini</a>, <a href="CFLink.DINMOD4.html">CFLink.DINMOD4</a>).
+            </div>
+        
+
+        
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+        
+    
+        
+    
+        
+    
+        
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="subsection-title">Members</div>
+
+        <dl>
+            
+<dt>
+    <h4 class="name" id="deviceID"><span class="type-signature"></span>deviceID<span class="type-signature"> :String</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        The CFLink device ID of the device holding this port
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="minChange"><span class="type-signature"></span>minChange<span class="type-signature"> :Number</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        For port modes that support it (i.e. voltage digital trigger), the minimum change that triggers a state change
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="mode"><span class="type-signature"></span>mode<span class="type-signature"> :<a href="CFLink.IOPort.html#Mode">CFLink.IOPort.Mode</a></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        The current Mode of this port. Do not change it directly
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="portNumber"><span class="type-signature"></span>portNumber<span class="type-signature"> :Number</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        The port number for this port in the device (starts at 1)
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="portNumberString"><span class="type-signature"></span>portNumberString<span class="type-signature"> :String</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        The port number of this port, as a string
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="powerOnState"><span class="type-signature"></span>powerOnState<span class="type-signature"> :Number</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        The power-on state of this port, when application (otherwise, 0)
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="state"><span class="type-signature"></span>state<span class="type-signature"> :Number</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        The current state of the port. Do not change it directly.
+For I/O ports configured as relay ports, state is either 0 (open) or 1 (closed)
+For I/O ports configured as dry contact inputs, voltage trigger or video sensing input, it is 0 or 1
+For I/O ports configured for voltage or resistance reading, it is the actual value read on the port.
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="CONFIGURATION_CHANGE"><span class="type-signature">&lt;static, constant> </span>CONFIGURATION_CHANGE<span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Event fired when an IOPort's configuration changes
+Your callback function for watching this event should be of the type:
+function(event, sender, portObject)
+the portObject is an object of type <a href="CFLink.IOPort.html">CFLink.IOPort</a>. From it, you can obtain the current mode and state.
+This event is also sent by LED subclasses (for specialized LEDs on SW16 and others)
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="Mode"><span class="type-signature">&lt;static> </span>Mode<span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Constants defining the mode an I/O port can be configured to
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        <dl>
+            
+
+<table class="props">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		
+		
+		
+		<th>Value</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+        <tr>
+            
+                <td class="name"><code>DRY_CONTACT</code></td>
+            
+                
+            
+            
+            
+                <td class="default">
+                
+                    D
+                
+                </td>
+            
+
+            <td class="description last">
+                Port configured as a dry contact input @constant
+                
+            </td>
+        </tr>
+	
+	
+        <tr>
+            
+                <td class="name"><code>RESISTANCE_READING</code></td>
+            
+                
+            
+            
+            
+                <td class="default">
+                
+                    R
+                
+                </td>
+            
+
+            <td class="description last">
+                Port configured for reading resistance values up to 10000 ohms
+                
+            </td>
+        </tr>
+	
+	
+        <tr>
+            
+                <td class="name"><code>VOLTAGE_TRIGGER</code></td>
+            
+                
+            
+            
+            
+                <td class="default">
+                
+                    V
+                
+                </td>
+            
+
+            <td class="description last">
+                Port configured as a digital trigger based on input voltage (will return 0 or 1)
+                
+            </td>
+        </tr>
+	
+	
+        <tr>
+            
+                <td class="name"><code>VOLTAGE_READING</code></td>
+            
+                
+            
+            
+            
+                <td class="default">
+                
+                    A
+                
+                </td>
+            
+
+            <td class="description last">
+                Port configured as an analog voltage (0.0v to 10.0v) reading input
+                
+            </td>
+        </tr>
+	
+	
+        <tr>
+            
+                <td class="name"><code>VIDEO_SENSING</code></td>
+            
+                
+            
+            
+            
+                <td class="default">
+                
+                    S
+                
+                </td>
+            
+
+            <td class="description last">
+                Port configured to sense video signals
+                
+            </td>
+        </tr>
+	
+	
+        <tr>
+            
+                <td class="name"><code>RELAY_CONTROL_OUTPUT</code></td>
+            
+                
+            
+            
+            
+                <td class="default">
+                
+                    E
+                
+                </td>
+            
+
+            <td class="description last">
+                port is an external relay control output (0-24V DC)
+                
+            </td>
+        </tr>
+	
+	
+        <tr>
+            
+                <td class="name"><code>LED_OUTPUT</code></td>
+            
+                
+            
+            
+            
+                <td class="default">
+                
+                    L
+                
+                </td>
+            
+
+            <td class="description last">
+                Port configured as an external LED output (1ma)
+                
+            </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+        </dl>
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="VALUE_CHANGE"><span class="type-signature">&lt;static, constant> </span>VALUE_CHANGE<span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Event fired when the value (input or output) of an I/O port changes. For example, a different voltage
+could have been read, or a relay could have been closed.
+Your callback function for watching this event should be of the type:
+
+function(event, sender, portObject, oldValue, newValue)
+
+the portObject is an object of type <a href="CFLink.IOPort.html">CFLink.IOPort</a>. From it, you can obtain the current mode as well.
+the oldValue is the previous value (-1 the first time one is received)
+the newValue is the new value
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<br clear="both">
+
+<script> sh_highlightDocument(); </script>
+</body>
+</html>

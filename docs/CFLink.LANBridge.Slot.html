@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Class: Slot</title>
+    
+    <script src="http://shjs.sourceforge.net/sh_main.min.js"> </script>
+    <script src="http://shjs.sourceforge.net/lang/sh_javascript.min.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="styles/node-dark.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+    
+<!-- this element gets replaced when producing the final complete docset
+     with a navigation bar that allows moving between docs
+-->
+<navbar />
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span2">
+            <div class="well">
+                <div id="toc">
+                    <h2><a href="index.html">Table of Contents</a></h2><h3>Namespaces</h3><ul><li><a href="CFLink.html">CFLink</a></li></ul><h3>Classes</h3><ul><li><a href="CFLink.CFMini.html">CFMini</a></li><li><a href="CFLink.DINMOD4.html">DINMOD4</a></li><li><a href="CFLink.Device.html">Device</a></li><li><a href="CFLink.IOPort.html">IOPort</a></li><li><a href="CFLink.IRBlaster.html">IRBlaster</a></li><li><a href="CFLink.LANBridge.html">LANBridge</a></li><li><a href="CFLink.LEDPort.html">LEDPort</a></li><li><a href="CFLink.Module.html">Module</a></li><li><a href="CFLink.RS232Port.html">RS232Port</a></li><li><a href="CFLink.RelayPort.html">RelayPort</a></li><li><a href="CFLink.SW16.html">SW16</a></li><li><a href="CFLink.LANBridge.Slot.html">Slot</a></li></ul>
+                </div>
+            </div>
+        </div>
+        <div class="span10">
+            
+
+
+
+<div id="header">
+    <h2><span class="ancestors"><a href="CFLink.html">CFLink</a><a href="CFLink.LANBridge.html">.LANBridge</a>.</span>Slot</h2>
+    
+</div>  
+
+<div id="article">
+    <div class="container-overview">
+    
+
+    
+        
+
+    
+        
+    
+        
+    
+        
+            <div class="description">
+                A Slot object is the JavaScript interface with a single communication slot on a LAN Bridge device<br><br><b>Do not create this object directly</b>. You can obtain instances of this class using theCFLink.LANBridge.getSlot function.
+            </div>
+        
+
+        
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+        
+    
+        
+    
+        
+    
+        
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="subsection-title">Members</div>
+
+        <dl>
+            
+<dt>
+    <h4 class="name" id="CONFIGURATION_CHANGE"><span class="type-signature">&lt;static, constant> </span>CONFIGURATION_CHANGE<span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        This event is being sent when a communication slot's configuration on the LANBridgechanges. Your callback function should have the prototype:function(event, sender, commSlot)event is the name of this eventsender is the <a href="CFLink.LANBridge.html">CFLink.LANBridge</a> object that owns this <a href="CFLink.LANBridge.Slot.html">CFLink.LANBridge.Slot</a>commSlot is is the <a href="CFLink.LANBridge.Slot.html">CFLink.LANBridge.Slot</a> object itself
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+    
+</dd>
+
+        </dl>
+    
+
+    
+        <div class="subsection-title">Methods</div>
+
+        <dl>
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="bridge">
+            <span class="type-signature"></span>bridge
+            (<span class="method-call-params">
+                
+    	                    targetSlot
+    	                    , 
+    	                    targetDevice
+    	                    , 
+    	                    targetModule
+    	                    , 
+    	                    outgoingWrapperCommand
+    	                    , 
+    	                    incomingCommandFilter
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		<th>Type</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>targetSlot</code></td>
+            
+            
+            <td class="type">
+            
+                        Number
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">The slot to forward data to/from. Numbers 1,2,11-20 only.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>targetDevice</code></td>
+            
+            
+            <td class="type">
+            
+                        string
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">if targetSlot is 1 (LANBridge's CFLink slot), only messages from the specified device's CFLinkID will be forwarded</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>targetModule</code></td>
+            
+            
+            <td class="type">
+            
+                        string
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">if targetSlot is 1 (LANBridge's CFLink slot) and targetDevice not empty and addresses a CFLink device that contains modules, targetModule is the module we're bridging to within the targetDevice</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>outgoingWrapperCommand</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">{string} if targetSlot is 1 (LANBridge's CFLink slot), you can set a 7 char CFLink wrapper command that will be used to wrap all data sent from this slot to the other slot, effectively turning raw data into valid CFLink packets</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>incomingCommandFilter</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">{string} if targetSlot is 1 (LANBridge's CFLink slot), you can set a 7 char CFLink command filter that will filter out all packets coming from the target slot, AND unwrapping the payload, effectively extracting raw data from incoming CFLink packets</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Bridge this slot to another slot. You can setup bridges for slots 2 (RS232) and 11 - 20 onlyChanges are effective after a device reset.
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="configureForTCP">
+            <span class="type-signature"></span>configureForTCP
+            (<span class="method-call-params">
+                
+    	                    mode
+    	                    , 
+    	                    ipAddress
+    	                    , 
+    	                    port
+    	                    , 
+    	                    timeout
+    	                    , 
+    	                    maxConnections
+    	                    , 
+    	                    echo
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>mode</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">{string} "S" for TCP server slot, "C" for TCP client slot</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>ipAddress</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">{string} for TCP servers slots, "0.0.0.0" to allow any client to connect or the IP address of the only allowed client. For TCP client slots, the IP address of the remote to connect to.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>port</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">{Number} the TCP port number to assign to the slot</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>timeout</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">{Number} The time in seconds to hold a TCP connection open for without any data transmissions. Set to 0 to disable.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>maxConnections</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">{Number} The maximum number of simultaneous connections a TCP Server slot can handle. Set to 0 for unlimited</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>echo</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">{Number} Option to echo data received on a TCP Server slot from any TCP Client to all other connected clients. 1 to enable, 0 to disable. Ignored for TCP Client slots.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Configure this slot for TCP communications. The configuration command is being sent immediately to the device's slot,but the changes won't be effective until the device is reset (therefore, we don't update the properties of thisJavaScript object immediately)
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="configureForUDP">
+            <span class="type-signature"></span>configureForUDP
+            (<span class="method-call-params">
+                
+    	                    mode
+    	                    , 
+    	                    ipAddress
+    	                    , 
+    	                    port
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>mode</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">{string} "U" for unicast UDP, "M" for multicast, "B" for broadcast</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>ipAddress</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">the IP address to set for this</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>port</code></td>
+            
+            
+            <td class="type">
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">the port on the remote</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Configure this slot for UDP communications. The configuration command is being sent immediately to the device's slot,but the changes won't be effective until the device is reset (therefore, we don't update the properties of thisJavaScript object immediately)
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="disableSlot">
+            <span class="type-signature"></span>disableSlot
+            (<span class="method-call-params">
+                
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Disable this slot. The configuration command is being sent immediately to the device's slot,but the changes won't be effective until the device is reset (therefore, we don't update the properties of thisJavaScript object immediately)
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="unbridge">
+            <span class="type-signature"></span>unbridge
+            (<span class="method-call-params">
+                
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Unsubscribe a slot from any subscription it previously had
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        </dl>
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<br clear="both">
+
+<script> sh_highlightDocument(); </script>
+</body>
+</html>

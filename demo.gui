@@ -1,0 +1,86 @@
+<gui>
+  <properties>
+    <project>CFLinkJS Demo</project>
+    <designer>CommandFusion</designer>
+    <size>
+      <portrait width="320" height="480" />
+      <landscape width="480" height="320" />
+    </size>
+    <imagefolder>
+    </imagefolder>
+    <debug loaderrors="0" connectionerrors="0" />
+  </properties>
+  <systems>
+    <system name="CFLINK" ip="192.168.0.115" port="10207" protocol="tcp" alwayson="1" offlinequeue="0" accept="0" acceptBroadcasts="0" ssl="0" maxconnections="0" heartbeatRx="" heartbeatTx="" heartbeatMode="-1" eom="\xF5\xF5" connectionStatus="0" disconnectionStatus="0">
+      <fb name="IncomingData" regex="\xF2[\s\S]\xF3\w{7}\xF4[\s\S]*\xF5\xF5" />
+      <fb name="ALL DATA" regex="." />
+    </system>
+    <system name="EpsonProjector" ip="192.168.0.115" port="10209" protocol="tcp" alwayson="1" offlinequeue="0" accept="0" acceptBroadcasts="0" ssl="0" maxconnections="0" heartbeatRx="" heartbeatTx="" heartbeatMode="-1" eom="\x0D" connectionStatus="0" disconnectionStatus="0">
+      <fb name="EpsonProjectorFeedback" regex="." />
+    </system>
+  </systems>
+  <themes>
+    <theme type="background" name=".portrait"><![CDATA[ background-image: url(bg_portrait.png); background-repeat: no-repeat;]]></theme>
+    <theme type="button" name=".top_btn_single[state='0']"><![CDATA[padding: 0px 21px 0px 21px; -webkit-border-image: url(top_btn_single_off.png) 0 21 0 21; color: White; font-size: 12px; font-family: 'Verdana'; font-weight: normal; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="button" name=".top_btn_single[state='1']"><![CDATA[padding: 0px 21px 0px 21px; -webkit-border-image: url(top_btn_single_on.png) 0 21 0 21; color: White; font-size: 12px; font-family: 'Verdana'; font-weight: normal; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="text" name=".text_c"><![CDATA[ text-shadow: rgba(0,0,0,1) 0px -1px 0px; color: Silver; font-size: 16px; font-family: 'Arial'; text-align: center; vertical-align: middle; font-weight: bold; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="text" name=".status_c"><![CDATA[ text-shadow: rgba(0,0,0,1) 0px -1px 0px; color: Red; font-size: 12px; font-family: 'Arial'; text-align: center; vertical-align: middle; font-weight: normal; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="text" name=".small_c"><![CDATA[ text-shadow: rgba(0,0,0,1) 0px -1px 0px; color: White; font-size: 12px; font-family: 'Arial'; text-align: center; vertical-align: middle; font-weight: normal; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="input" name=".input"><![CDATA[ background-color: White; border-width: 1px; border-color: #575757; color: Black; font-size: 12px; font-family: 'Verdana'; text-align: left; vertical-align: middle; font-weight: bold; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+  </themes>
+  <scripts>
+    <script name="cflink.js" />
+    <script name="epsonprojector.js" />
+    <script name="demo.js" />
+  </scripts>
+  <page name="Startup" j="0" transition="" subtype="" time="0" ease="">
+    <portrait t="portrait">
+      <txt j="0" x="0" y="3" w="320" h="41" t="text_c" wrap="False" l="0">CFLink JS Demo
+- CF Mini -</txt>
+      <btn j="1" x="22" y="90" w="66" h="43" t="top_btn_single" flip="None" sim="0" l="0" s="1" js="dev.mini.toggleRelayState(1);">
+        <inactive s="0">1</inactive>
+        <active s="0">1</active>
+      </btn>
+      <txt j="0" x="0" y="54" w="320" h="34" t="text_c" wrap="False" l="0">Relays</txt>
+      <btn j="2" x="92" y="90" w="66" h="43" t="top_btn_single" flip="None" sim="0" l="0" s="1" js="dev.mini.toggleRelayState(2);">
+        <inactive s="0">2</inactive>
+        <active s="0">2</active>
+      </btn>
+      <btn j="3" x="162" y="90" w="66" h="43" t="top_btn_single" flip="None" sim="0" l="0" s="1" js="dev.mini.toggleRelayState(3);">
+        <inactive s="0">3</inactive>
+        <active s="0">3</active>
+      </btn>
+      <btn j="4" x="232" y="90" w="66" h="43" t="top_btn_single" flip="None" sim="0" l="0" s="1" js="dev.mini.toggleRelayState(4);">
+        <inactive s="0">4</inactive>
+        <active s="0">4</active>
+      </btn>
+      <btn j="0" x="44" y="150" w="106" h="43" t="top_btn_single" flip="None" sim="1" l="0" s="1" js="dev.mini.setRelayState([1,2,3,4], 0);">
+        <inactive s="0">OPEN
+ALL</inactive>
+        <active s="0">OPEN
+ALL</active>
+      </btn>
+      <btn j="0" x="169" y="150" w="106" h="43" t="top_btn_single" flip="None" sim="1" l="0" s="1" js="dev.mini.setRelayState([1,2,3,4], 1);">
+        <inactive s="0">CLOSE ALL</inactive>
+        <active s="0">CLOSE ALL</active>
+      </btn>
+      <txt j="0" x="0" y="340" w="320" h="34" t="text_c" wrap="False" l="0">RS232 Data:</txt>
+      <txt j="5" x="0" y="366" w="320" h="34" t="small_c" wrap="False" l="0">nothing yet...</txt>
+      <txt j="0" x="0" y="216" w="320" h="34" t="text_c" wrap="False" l="0">IO Ports</txt>
+      <txt j="0" x="0" y="244" w="71" h="34" t="small_c" wrap="False" l="0">P01</txt>
+      <txt j="0" x="83" y="244" w="71" h="34" t="small_c" wrap="False" l="0">P02</txt>
+      <txt j="0" x="166" y="244" w="71" h="34" t="small_c" wrap="False" l="0">P03</txt>
+      <txt j="0" x="249" y="244" w="71" h="34" t="small_c" wrap="False" l="0">P04</txt>
+      <txt j="1" x="0" y="274" w="71" h="34" t="small_c" wrap="False" l="0">-</txt>
+      <txt j="2" x="83" y="274" w="71" h="34" t="small_c" wrap="False" l="0">-</txt>
+      <txt j="3" x="166" y="274" w="71" h="34" t="small_c" wrap="False" l="0">-</txt>
+      <txt j="4" x="249" y="274" w="71" h="34" t="small_c" wrap="False" l="0">-</txt>
+      <input j="0" s="6" x="12" y="406" w="300" h="23" pass="0" autoFocus="0" f="0" t="input" l="0">Send data to COM port...</input>
+    </portrait>
+    <landscape />
+  </page>
+  <subpage name="Cache" w="320" h="480" clip="1">
+    <img x="19" y="22" w="40" h="40" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">Padlock-Open.png</img>
+    <img x="82" y="23" w="40" h="40" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">Padlock.png</img>
+  </subpage>
+</gui>

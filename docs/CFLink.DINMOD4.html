@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Class: DINMOD4</title>
+    
+    <script src="http://shjs.sourceforge.net/sh_main.min.js"> </script>
+    <script src="http://shjs.sourceforge.net/lang/sh_javascript.min.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="styles/node-dark.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+    
+<!-- this element gets replaced when producing the final complete docset
+     with a navigation bar that allows moving between docs
+-->
+<navbar />
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span2">
+            <div class="well">
+                <div id="toc">
+                    <h2><a href="index.html">Table of Contents</a></h2><h3>Namespaces</h3><ul><li><a href="CFLink.html">CFLink</a></li></ul><h3>Classes</h3><ul><li><a href="CFLink.CFMini.html">CFMini</a></li><li><a href="CFLink.DINMOD4.html">DINMOD4</a></li><li><a href="CFLink.Device.html">Device</a></li><li><a href="CFLink.IOPort.html">IOPort</a></li><li><a href="CFLink.IRBlaster.html">IRBlaster</a></li><li><a href="CFLink.LANBridge.html">LANBridge</a></li><li><a href="CFLink.LEDPort.html">LEDPort</a></li><li><a href="CFLink.Module.html">Module</a></li><li><a href="CFLink.RS232Port.html">RS232Port</a></li><li><a href="CFLink.RelayPort.html">RelayPort</a></li><li><a href="CFLink.SW16.html">SW16</a></li><li><a href="CFLink.LANBridge.Slot.html">Slot</a></li></ul>
+                </div>
+            </div>
+        </div>
+        <div class="span10">
+            
+
+
+
+<div id="header">
+    <h2><span class="ancestors"><a href="CFLink.html">CFLink</a>.</span>DINMOD4</h2>
+    
+</div>  
+
+<div id="article">
+    <div class="container-overview">
+    
+
+    
+        
+
+    
+        
+    
+        
+    
+        
+            <div class="description">
+                This object is the JavaScript interface to a CommandFusion DIN-MOD4 device. It inherits the functionsand properties of <a href="CFLink.Device.html">CFLink.Device</a>. A DIN-MOD4 is a modular unit that also has a couple onboard ports(RS-232, single digital input)To access the onboard RS232, you'll use the CFLink.Device.configureCOMPort, CFLink.Device.sendCOMDataand CFLink.Device.watchCOMPort functions.You can monitor the digital input port by calling CFLink.DINMOD4.watchOnboardDigitalInput.
+            </div>
+        
+
+        
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+        
+    
+        
+    
+        
+    
+        
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <div class="subsection-title">Methods</div>
+
+        <dl>
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="getDigitalInputState">
+            <span class="type-signature"></span>getDigitalInputState
+            (<span class="method-call-params">
+                
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Get the current state of the onboard digital input (the one located at the back ofthe DIN-MOD4 unit)
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="getModule">
+            <span class="type-signature"></span>getModule
+            (<span class="method-call-params">
+                
+    	                    slotNumber
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		<th>Type</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>slotNumber</code></td>
+            
+            
+            <td class="type">
+            
+                        Number
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">the slot number in the DIN-MOD4 unit (1-4). Slot 1 is the one on the left, at the same level as the CFLink ID indicator.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+                            <dl>
+
+        <dt>
+            Returns
+        <dt>
+        <dd>
+            a module object, or null
+        </dd>
+    
+    	    <dt>
+	        
+	            Type
+            
+        	</dt>
+        	<dd>
+        		
+        		<span class="param-type">CFLink.Module</span> 
+        		
+        	</dd>
+
+</dl>
+
+                        
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Obtain the <a href="CFLink.Module.html">CFLink.Module</a> object that represents a module inserted in one of the slotsof the DIN-MOD4 device. If there is no module inserted in this slot, or if the list of insertedmodules is not yet known, this function returns null.Once you have a <a href="CFLink.Module.html">CFLink.Module</a> object, you can use the object to talk to the module itself,get or set the ports, configure it, etc.
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="unwatch">
+            <span class="type-signature"></span>unwatch
+            (<span class="method-call-params">
+                
+    	                    watcherID
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		<th>Type</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>watcherID</code></td>
+            
+            
+            <td class="type">
+            
+                        Number
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">the watcher ID that was returned by CFLink.DINMOD4.watchOnboardDigitalInput</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Stop watching the changes you asked to be notified for in CFLink.DINMOD4.watchOnboardDigitalInputYou could as well call <a href="CFLink.html#unwatch">CFLink.unwatch</a> which does the same thing.
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        
+            
+<div class="method-container">
+    <div class="method-name-container">
+        <div class="method-name" id="watchOnboardDigitalInput">
+            <span class="type-signature"></span>watchOnboardDigitalInput
+            (<span class="method-call-params">
+                
+    	                    callback
+    	                    , 
+    	                    me
+    	                    
+            </span>)
+            
+        </div>
+    </div>
+    <div class="method-inner">
+        
+            <h5>Parameters:</h5>
+            <div class="method-params">
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		<th>Name</th>
+		<th>Type</th>
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+            
+            <td class="type">
+            
+                        Function
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">your callback function, of the form callback(dinmod4_object, portNumber, value)</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>me</code></td>
+            
+            
+            <td class="type">
+            
+                        Object
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">the object to set as `this' when calling your callback function</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+                
+                            <dl>
+
+        <dt>
+            Returns
+        <dt>
+        <dd>
+            a watcherID you can use to unwatch with <a href="CFLink.html#unwatch">CFLink.unwatch</a> or CFLink.DINMOD4.unwatch (both are equivalent)
+        </dd>
+    
+    	    <dt>
+	        
+	            Type
+            
+        	</dt>
+        	<dd>
+        		
+        		<span class="param-type">Number</span> 
+        		
+        	</dd>
+
+</dl>
+
+                        
+            </div>
+        
+        <div class="method-description">
+            
+
+            
+                <div class="description">
+                    Setup a callback function that is called when the state of the selected IO port(s) changeThis is a simple helper that watches the <a href="CFLink.IOPort.html#VALUE_CHANGE">CFLink.IOPort.VALUE_CHANGE</a> event and only calls you backwhen one of the I/O ports you want to watch changes state.Your callback function should be of the form:myCallback(cfminiObject, portNumber, previousValue, newValue)Where `cfminiObject' is the <a href="CFLink.CFMini.html">CFLink.CFMini</a> device object, `portNumber' is the I/O port numberthat changed state, `previousValue' is the previous value of this I/O port, and `newValue' is itsnew value. Note that when we get the initial value of the I/O port (at initialization time), the `previousValue'parameter will be -1.
+                </div>
+            
+    
+            
+
+            
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+		
+	
+	
+    
+	
+	
+
+	
+</dl>
+
+    
+            
+    
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+        </dl>
+    
+
+    
+
+    
+</div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<br clear="both">
+
+<script> sh_highlightDocument(); </script>
+</body>
+</html>
