@@ -1,6 +1,16 @@
-# CommandFusion CFLink JavaScript API
+# CommandFusion CFLink JavaScript API - BETA
 
-Our [CommandFusion hardware](http://www.commandfusion.com/hardware.html) is powerful and easy to work with. To make it even easier, we are providing a JavaScript API for [iViewer](http://www.commandfusion.com/iviewer.html) so you can talk to CFLink devices and get notified of incoming data very easily. Our JavaScript code handles the [low-level CFLink protocol](http://www.commandfusion.com/docs/cflink), providing you with high-level interfaces for your code to drive the CFLink network.
+Our [CommandFusion hardware](http://www.commandfusion.com/hardware.html) is powerful and easy to work with. To make it even easier, we are providing a JavaScript API for [iViewer](http://www.commandfusion.com/iviewer.html) so you can talk to CFLink devices and get notified of incoming data very easily.
+
+Our JavaScript code handles the [low-level CFLink protocol](http://www.commandfusion.com/docs/cflink), providing you with high-level interfaces for your code to drive the CFLink network.
+
+** CFLink JavaScript API is still in beta!** Please report issues and feature requests via the [issue tracker](https://github.com/CommandFusion/CFLinkJS/issues).
+
+## Usage
+
+To use the CFLink JS API, you need to include the [cflink.js](https://raw.github.com/CommandFusion/CFLinkJS/master/cflink.js) file into your guiDesigner project via Edit > Project Properties > Script Manager.
+
+Then you create your own JavaScript file for your iViewer programming, and add it to the Script Manager also.
 
 ## Quick Start Example
 
