@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<gui>
+  <properties>
+    <project>Demo-iPad</project>
+    <designer>CommandFusion</designer>
+    <size autoposition="scale">
+      <portrait width="768" height="1024" />
+      <landscape width="1024" height="768" />
+    </size>
+    <autoposition />
+    <imagefolder>
+    </imagefolder>
+    <debug loaderrors="0" connectionerrors="0" />
+  </properties>
+  <systems>
+    <system name="LAN Bridge" protocol="tcp" accept="0" ip="192.168.0.100" port="10207" origin="0" alwayson="1" idleTimeout="0" dialogTimeout="0" heartbeatMode="-1" heartbeatRx="" heartbeatTx="" textEncoding="" eom="\xF5\xF5" js="" connectionStatus="0" disconnectionStatus="0" startupCmd="" startupMacro="" offlinequeue="1" ssl="0">
+      <fb name="LB_Feedback" regex="(.)" />
+    </system>
+  </systems>
+  <themes>
+    <theme type="button" name=".btn_sq_lrg_stretch[state='0']"><![CDATA[padding: 0px 10px 0px 10px; -webkit-border-image: url(btn_sq_lrg_off.png) 0 10 0 10; text-shadow: rgba(255,255,255,0.78) 0px 1px 0px; color: #404040; font-size: 20px; font-family: 'Verdana'; font-weight: bold; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="button" name=".btn_sq_lrg_stretch[state='1']"><![CDATA[padding: 0px 10px 0px 10px; -webkit-border-image: url(btn_sq_lrg_on.png) 0 10 0 10; text-shadow: rgba(0,0,0,0.78) 0px -1px 0px; color: White; font-size: 20px; font-family: 'Verdana'; font-weight: bold; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="background" name=".bg_landscape"><![CDATA[background-color: #D3D3D3;]]></theme>
+    <theme type="text" name=".20_c"><![CDATA[ text-shadow: rgba(255,255,255,0.78) 0px 1px 0px; color: #373737; font-size: 20px; font-name: 'HelveticaNeue-Bold'; font-family: 'Helvetica Neue'; text-align: center; vertical-align: middle; font-weight: bold; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="text" name=".20_l"><![CDATA[ text-shadow: rgba(255,255,255,0.78) 0px 1px 0px; color: #373737; font-size: 20px; font-name: 'HelveticaNeue-Bold'; font-family: 'Helvetica Neue'; text-align: left; vertical-align: middle; font-weight: bold; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="text" name=".14_l"><![CDATA[ text-shadow: rgba(255,255,255,0.78) 0px 1px 0px; color: #373737; font-size: 14px; font-name: 'HelveticaNeue-Bold'; font-family: 'Helvetica Neue'; text-align: left; vertical-align: middle; font-weight: bold; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+  </themes>
+  <scripts>
+    <script name="cflink-simple.js" />
+    <script name="main.js" />
+  </scripts>
+  <page name="Startup" j="0" tags="" transition="" subtype="" time="0" ease="" start="1">
+    <portrait />
+    <landscape t="bg_landscape">
+      <btn j="1" x="20" y="125" w="91" h="82" t="btn_sq_lrg_stretch" flip="None" sim="0" l="0" s="1" tags="relay_P01" js="CFL.setRelay(&quot;20&quot;, null, &quot;P01&quot;, &quot;T&quot;);">
+        <inactive s="0">Relay 1</inactive>
+        <active s="0">Relay 1</active>
+      </btn>
+      <txt j="0" x="20" y="26" w="389" h="61" t="20_c" wrap="False" l="0" tags="">CF Mini - CFLink ID 20</txt>
+      <btn j="0" x="65" y="255" w="299" h="82" t="btn_sq_lrg_stretch" flip="None" sim="1" l="0" s="1" tags="" js="CFL.sendIR(&quot;20&quot;, &quot;P01&quot;, &quot;MEM&quot;, &quot;Sony:Play&quot;);">
+        <inactive s="0">Send IR Code
+From Memory</inactive>
+        <active s="0">Send IR Code
+From Memory</active>
+      </btn>
+      <btn j="2" x="120" y="125" w="91" h="82" t="btn_sq_lrg_stretch" flip="None" sim="0" l="0" s="1" tags="relay_P02" js="CFL.setRelay(&quot;20&quot;, null, &quot;P02&quot;, &quot;T&quot;);">
+        <inactive s="0">Relay 2</inactive>
+        <active s="0">Relay 2</active>
+      </btn>
+      <btn j="3" x="220" y="125" w="91" h="82" t="btn_sq_lrg_stretch" flip="None" sim="0" l="0" s="1" tags="relay_P03" js="CFL.setRelay(&quot;20&quot;, null, &quot;P03&quot;, &quot;T&quot;);">
+        <inactive s="0">Relay 3</inactive>
+        <active s="0">Relay 3</active>
+      </btn>
+      <btn j="4" x="320" y="125" w="91" h="82" t="btn_sq_lrg_stretch" flip="None" sim="0" l="0" s="1" tags="relay_P04" js="CFL.setRelay(&quot;20&quot;, null, &quot;P04&quot;, &quot;T&quot;);">
+        <inactive s="0">Relay 4</inactive>
+        <active s="0">Relay 4</active>
+      </btn>
+      <txt j="0" x="425" y="119" w="423" h="94" t="14_l" wrap="True" l="0" tags="">Each button is assigned a tag, which is used to update the button when the relay changes state.
+Select 'View &gt; Tag Editor" to edit tags of the selected object in your GUI.</txt>
+      <btn j="0" x="65" y="345" w="299" h="82" t="btn_sq_lrg_stretch" flip="None" sim="1" l="0" s="1" tags="" js="CFL.sendIR(&quot;20&quot;, &quot;P01&quot;, &quot;RAW&quot;, &quot;IR CODE GOES HERE&quot;);">
+        <inactive s="0">Send RAW IR Code.
+Pronto CCF Formatted.</inactive>
+        <active s="0">Send RAW IR Code.
+Pronto CCF Formatted.</active>
+      </btn>
+      <txt j="0" x="425" y="26" w="411" h="61" t="14_l" wrap="True" l="0" tags="">Adjust JavaScript assigned to each button to reflect the CFLink ID you want to send each command to.</txt>
+      <btn j="0" x="65" y="465" w="299" h="82" t="btn_sq_lrg_stretch" flip="None" sim="1" l="0" s="1" tags="" js="CFL.sendSerial(&quot;20&quot;, &quot;&quot;, &quot;DATA TO SEND GOES HERE&quot;);">
+        <inactive s="0">Send message to on-board serial port</inactive>
+        <active s="0">Send message to on-board serial port</active>
+      </btn>
+    </landscape>
+  </page>
+</gui>
