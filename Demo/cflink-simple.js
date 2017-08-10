@@ -46,8 +46,8 @@ var CFL = {
 			CF.unwatch(CF.FeedbackMatchedEvent, this.system, this.feedback);
 		this.watches = [];
 		this.watchid = 1;
-		//this.system = "";
-		//this.feedback = "";
+		this.system = null;
+		this.feedback = null;
 	},
 
 	watch: function (array) {
@@ -80,7 +80,7 @@ var CFL = {
 	port: function (port) {
 		if (arguments.length == 2) port = [arguments[0], arguments[1]];
 		if (port instanceof Array) return "M" + port[0] + "|P0" + port[1];
-		if (port instanceof Number) return ("P0" + port).substr(0, 3);
+		if (port instanceof Number || typeof port === 'number') return ("P0" + port).substr(0, 3);
 		var a = port.split('|');
 		if (a.length === 1) return parseInt(port.substring(1), 10);	// "P01" -> 1
 		return [parseInt(a[0].substring(1), 10), parseInt(a[1].substring(1), 10)];
@@ -89,7 +89,7 @@ var CFL = {
 	_packetRegex: function(id,cmd,payload) {
 		id = (id == null || id === "") ? "[\\s\\S]" : "\\"+String.fromCharCode(parseInt(id,16));
 		payload = (payload == null || payload === "") ? "" : payload.replace("|","\\|");
-		return new RegExp("^\xF2" + id + "\xF3" + cmd + "\xF4" + payload);
+		return new RegExp("^\xF2" + '(' +id + '|\xFF)' + "\xF3" + cmd + "\xF4" + payload); // TODO: fix hack here around FF.
 	},
 
 	/*-----------------------------------------------
@@ -108,14 +108,19 @@ var CFL = {
 
 	watchSerial: function (id, module, callback) {
 		var orig = "COM";
+
+		if (module == null || module === "" || module.indexOf('|') === -1) {
+			orig = "(?!COM)(...)";	
+		}
+
 		if (module == null || module === "") {
-			orig = "(?!COM)(...)";
 			module = "";
 		}
+
 		var self = this;
 		return this.watch([ function (watchID, message) {
 			var m = self.unpack(message), origin = "", data = m[4];
-			if (m[2] == "COM") {
+			if (m[2] == "COM" || m[2] == "SOL") {
 				var idx = data.indexOf(':');
 				origin = data.substr(0, idx);
 				data = data.substr(idx + 1);
@@ -255,8 +260,7 @@ var CFL = {
 	 *-----------------------------------------------
 	 */
 	sendIR: function (id, port, format, data) {
-		//CF.log(id + " TIRXSND" + port + ":" + format + ":" + data);
-		this.message(id, "TIRXSND", port + ":" + format + ":" + data);
+		this.message(id, "TCFXSND", port + ":" + format + ":" + data);
 	},
 
 	watchIR: function (id, port, callback) {
